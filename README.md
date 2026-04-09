@@ -1,34 +1,34 @@
 # JobScheduler
 
-An asynchronous task queuing and background execution system written in **C++20**. This project demonstrates the practical application of multithreading mechanisms, Object-Oriented Programming paradigms, and design patterns.
+Asynchroniczny system kolejkowania i wykonywania zadań w tle, napisany w nowoczesnym standardzie C++20. Projekt demonstruje wykorzystanie mechanizmów wielowątkowości, paradygmatów programowania obiektowego oraz wzorców projektowych.
 
-## Academic Context
-This project was developed as part of the university coursework.
+## Kontekst Akademicki
+Projekt został zrealizowany w ramach zajęć na uczelni wyższej.
 
-* **Course Name:** Advanced C++ (Zaawansowane C++)
-* **Term:** Academic year 2025/2026, half-semester: 3
-* **Instructors:** dr inż. Paweł Wnuk, prof. uczelni, dr hab. inż. Michał Syfert, prof. uczelni
+* **Nazwa przedmiotu:** Zaawansowane C++
+* **Realizacja:** rok akademicki 2025/2026, półsemestr: 3
+* **Prowadzący zajęcia:** * dr inż. Paweł Wnuk, prof. uczelni, dr hab. inż. Michał Syfert, prof. uczelni
 
-## Project Description
-The main objective of this project is to manage tasks in a multithreaded environment while minimizing the overhead associated with creating new processes. The system accepts polymorphic tasks, queues them based on their priority (HIGH, NORMAL, LOW), and distributes them among an available, fixed pool of worker threads.
-The business logic layer is completely decoupled from the presentation layer using the observer design pattern, ensuring high scalability and a clean architecture.
+## Opis projektu
+Celem projektu jest zarządzanie zadaniami w środowisku wielowątkowym z minimalizacją narzutu na tworzenie nowych procesów. System przyjmuje polimorficzne zadania, kolejkuje je na podstawie priorytetów (HIGH, NORMAL, LOW) i rozdziela między dostępną, stałą pulę wątków roboczych. Warstwa logiki biznesowej jest całkowicie odseparowana od warstwy prezentacji za pomocą wzorca Obserwator, co gwarantuje wysoką skalowalność i czystość architektury.
 
-## Key Features
-* **Thread Pool Management:** Utilizes `std::jthread` for safe and automatic thread lifecycle management.
-* **Priority Queuing (Monitor Pattern):** A thread-safe queue wrapper around `std::priority_queue`, protected by `std::mutex` and `std::condition_variable`.
-* **Polimorfizm and Interfaces:** A common `ITask` interface allowing the execution of tasks with different characteristics (e.g., CPU-bound `ComputeTask`, I/O-bound `FileIoTask`) without tight type coupling.
-* **Observer Pattern:** Asynchronous UI notifications (`CliDashboard`) regarding task status changes (PENDING, RUNNING, COMPLETED, FAILED).
-* **Facade Pattern:** The main API is encapsulated within the `JobScheduler` class.
-* **Graceful Shutdown:** A safe termination mechanism that guarantees the completion of ongoing tasks and wakes up idle threads before shutting down.
+## Główne funkcjonalności
+* **Zarządzanie pulą wątków:** Wykorzystanie `std::jthread` do bezpiecznego i automatycznego zarządzania cyklem życia wątków.
+* **Kolejkowanie Priorytetowe:** Wątkowo bezpieczna kolejka oparta na `std::priority_queue`, chroniona przez `std::mutex` i `std::condition_variable`.
+* **Polimorfizm i Interfejsy:** Wspólny interfejs `ITask` pozwalający na wykonywanie zadań o różnej charakterystyce bez ścisłego sprzęgania typów.
+* **Wzorzec Obserwator:** Asynchroniczne powiadamianie UI o zmianach statusu zadań (PENDING, RUNNING, COMPLETED, FAILED).
+* **Wzorzec Fasada:** Główne API ukryte za klasą `JobScheduler`.
+* **Graceful Shutdown:** Mechanizm bezpiecznego zamykania systemu, gwarantujący dokończenie trwających zadań i wybudzenie uśpionych wątków przed zamknięciem.
 
-## 🛠️ System Requirements & Technologies
-* **Language:** Modern C++ (Standard C++20)
-* **Compiler:** MSVC
-* **IDE:** Visual Studio 2022
-* **Memory Management:** Smart pointers (`std::unique_ptr`, `std::shared_ptr`)
+## Wymagania systemowe i technologiczne
+* **Język:** Modern C++ (Standard C++20)
+* **Kompilator:** MSVC
+* **Środowisko:** Visual Studio 2022
+* **Zarządzanie pamięcią:** Inteligentne wskaźniki (`std::unique_ptr`, `std::shared_ptr`)
 
-## Build and Run Instructions
-To compile and run the JobScheduler system locally, follow these steps:
-**Open the Project:** Launch Visual Studio 2022 and open the provided solution file (`.sln`) or the project folder.
-**Build the Solution:** Press `Ctrl + Shift + B` to compile the project.
-**Run the Application:** Press `Ctrl + F5` to launch the console application and view the real-time dashboard.
+## Instrukcja budowania i uruchamiania
+Aby skompilować i uruchomić system JobScheduler lokalnie, wykonaj poniższe kroki:
+* **Otwórz projekt** Uruchom Visual Studio 2022 i otwórz plik rozwiązania (`.sln`) lub folder z projektem.
+* **Skonfiguruj standard C++20**
+* **Zbuduj rozwiązanie** Naciśnij `Ctrl + Shift + B` (lub z górnego menu wybierz *Kompilacja* -> *Kompiluj rozwiązanie*), aby skompilować projekt.
+* **Uruchom aplikację** Naciśnij `Ctrl + F5` (Uruchom bez debugowania), aby włączyć aplikację konsolową i zobaczyć działanie systemu na żywo.
