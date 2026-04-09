@@ -7,8 +7,7 @@ This project was developed as part of the university coursework.
 
 * **Course Name:** Advanced C++ (Zaawansowane C++)
 * **Term:** Academic year 2025/2026, half-semester: 3
-* **Instructors:** * dr inż. Paweł Wnuk, prof. uczelni
-                   * dr hab. inż. Michał Syfert, prof. uczelni
+* **Instructors:** dr inż. Paweł Wnuk, prof. uczelni, dr hab. inż. Michał Syfert, prof. uczelni
 
 ## Project Description
 The main objective of this project is to manage tasks in a multithreaded environment while minimizing the overhead associated with creating new processes. The system accepts polymorphic tasks, queues them based on their priority (HIGH, NORMAL, LOW), and distributes them among an available, fixed pool of worker threads.
