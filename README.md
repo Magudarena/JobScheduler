@@ -27,7 +27,7 @@ The business logic layer is completely decoupled from the presentation layer usi
 * **IDE:** Visual Studio 2022
 * **Memory Management:** Smart pointers (`std::unique_ptr`, `std::shared_ptr`)
 
-## uild and Run Instructions
+## Build and Run Instructions
 To compile and run the JobScheduler system locally, follow these steps:
 **Open the Project:** Launch Visual Studio 2022 and open the provided solution file (`.sln`) or the project folder.
 **Build the Solution:** Press `Ctrl + Shift + B` to compile the project.
