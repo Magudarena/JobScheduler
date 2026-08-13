@@ -25,7 +25,7 @@ The business logic layer is completely decoupled from the presentation layer usi
 * **Language:** Modern C++ (Standard C++20)
 * **Compiler:** MSVC
 * **IDE:** Visual Studio 2022
-* **Memory Management:** Smart pointers (`std::unique_ptr`, `std::shared_ptr`)
+* **Memory Management:** Smart pointers (`std::unique_ptr`, `std::shared_ptr`) 
 
 ## Build and Run Instructions
 To compile and run the JobScheduler system locally, follow these steps:
